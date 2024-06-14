@@ -99,3 +99,7 @@ _@param_ `char* want: the expected integer.`
 ```c
 void debug_expect_int(int code_line, int got, int want);
 ```
+
+# Mainfile Example
+Included is an example makefile for a program that only has `main.c` and `main.h` to test utilising this library.
+This assumes the user is compiling for C11.
