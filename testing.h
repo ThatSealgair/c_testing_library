@@ -32,6 +32,24 @@ Calculates how long something took to run based on the value given by test_start
 */
 void test_speed_end(char* function, clock_t start_time);
 
+/* 
+---- test_pointer_allocation() ----
+Prints the allocation of a pointer with the pointer address and the size of the pointer.
+@param char* code_line: the line in the source vode the memory is allocated.
+@param char* variable: the name of the variable used for the memory.
+@param void* address: the memory address of the pointer
+*/
+void test_pointer_allocation(int code_line, char* variable, void* address, size_t size);
+
+/* 
+---- test_pointer_deallocation() ----
+Prints the deallocation of a pointer with the pointer address and the size of the pointer.
+@param char* code_line: the line in the source vode the memory is allocated.
+@param char* variable: the name of the variable used for the memory.
+@param void* address: the memory address of the pointer
+*/
+void test_pointer_deallocation(int code_line, char* variable, void* address, size_t size);
+
 /*
 ---- test_expected_string() ----
 Only prints the current value and expected value of two strings if they do not match. Requires compiler flag -DDBUG=1.
@@ -71,6 +89,23 @@ Prints the current value and expected value of two integers. Requires compiler f
 */
 void debug_expect_int(int code_line, int got, int want);
 
+/* 
+---- test_pointer_allocation() ----
+Prints the allocation of a pointer with the pointer address and the size of the pointer.
+@param char* code_line: the line in the source vode the memory is allocated.
+@param char* variable: the name of the variable used for the memory.
+@param void* address: the memory address of the pointer
+*/
+void debug_pointer_alloaction(int code_line, char* variable, void* pointer, size_t);
+
+/* 
+---- debug_pointer_allocation() ----
+Prints the allocation of a pointer with the pointer address and the size of the pointer.
+@param char* code_line: the line in the source vode the memory is allocated.
+@param char* variable: the name of the variable used for the memory.
+@param void* address: the memory address of the pointer
+*/
+void debug_pointer_deallocation(int code_line, char* variable, void* pointer, size_t size);
 
 /* --- PRIVATE FUNCTIONS --- */
 void _p_test(void);
