@@ -81,13 +81,21 @@ void test_speed_end(char* function, clock_t start_time) {
 }
 
 void test_pointer_allocation(int code_line, char* variable, void* address, size_t size) {
-  _p_code_line(code_line);
-  printf("[POINTER] %p [ALLOCATED] \"%s\" - [SIZE] %zu\n", (void *) &address, variable, size);
+  #ifdef DEBUG
+    #if (0 < DEBUG)
+      _p_code_line(code_line);
+      printf("[POINTER] %p [ALLOCATED] \"%s\" - [SIZE] %zu\n", (void *) &address, variable, size);
+    #endif
+  #endif
 }
 
 void test_pointer_deallocation(int code_line, char* variable, void* address, size_t size) {
-  _p_code_line(code_line);
-  printf("[POINTER] %p [REMOVED] \"%s\" - [SIZE] %zu\n", (void *) &address, variable, size);
+  #ifdef DEBUG
+    #if (0 < DEBUG)
+      _p_code_line(code_line);
+      printf("[POINTER] %p [REMOVED] \"%s\" - [SIZE] %zu\n", (void *) &address, variable, size);
+    #endif
+  #endif
 }
 
 void debug_string(int code_line, char* string, int length) {
@@ -121,11 +129,19 @@ void debug_expected_int(int code_line, int got, int want) {
 }
 
 void debug_pointer_allocation(int code_line, char* variable, void* pointer, size_t size) {
-  _p_code_line(code_line);
-  printf("[POINTER] %p [ALLOCATED]\"%s\" - [SIZE] %zu\n", (void *) &pointer, variable, size);
+  #ifdef DEBUG
+    #if (1 < DEBUG)
+      _p_code_line(code_line);
+      printf("[POINTER] %p [ALLOCATED]\"%s\" - [SIZE] %zu\n", (void *) &pointer, variable, size);
+    #endif
+  #endif
 }
 
 void debug_pointer_deallocation(int code_line, char* variable, void* pointer, size_t size) {
-  _p_code_line(code_line);
-  printf("[POINTER] %p [REMOVED] \"%s\" - [SIZE] %zu\n", (void *) &pointer, variable, size);
+  #ifdef DEBUG
+    #if (1 < DEBUG)
+      _p_code_line(code_line);
+      printf("[POINTER] %p [REMOVED] \"%s\" - [SIZE] %zu\n", (void *) &pointer, variable, size);
+    #endif
+  #endif
 }

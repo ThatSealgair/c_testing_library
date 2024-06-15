@@ -34,7 +34,7 @@ void test_speed_end(char* function, clock_t start_time);
 
 /* 
 ---- test_pointer_allocation() ----
-Prints the allocation of a pointer with the pointer address and the size of the pointer.
+Prints the allocation of a pointer with the pointer address and the size of the pointer if compiter flag -DDEBUG=n, where 0 < n, is given.
 @param char* code_line: the line in the source vode the memory is allocated.
 @param char* variable: the name of the variable used for the memory.
 @param void* address: the memory address of the pointer
@@ -43,7 +43,7 @@ void test_pointer_allocation(int code_line, char* variable, void* address, size_
 
 /* 
 ---- test_pointer_deallocation() ----
-Prints the deallocation of a pointer with the pointer address and the size of the pointer.
+Prints the deallocation of a pointer with the pointer address and the size of the pointer if compiler flag -DDBUG=n, where 0 < n, is given.
 @param char* code_line: the line in the source vode the memory is allocated.
 @param char* variable: the name of the variable used for the memory.
 @param void* address: the memory address of the pointer
@@ -90,8 +90,8 @@ Prints the current value and expected value of two integers. Requires compiler f
 void debug_expect_int(int code_line, int got, int want);
 
 /* 
----- test_pointer_allocation() ----
-Prints the allocation of a pointer with the pointer address and the size of the pointer.
+---- debug_pointer_allocation() ----
+Prints the allocation of a pointer with the pointer address and the size of the pointer. Requires comiler flag -DDBUG=n, where 1 < n, is called.
 @param char* code_line: the line in the source vode the memory is allocated.
 @param char* variable: the name of the variable used for the memory.
 @param void* address: the memory address of the pointer
@@ -100,7 +100,7 @@ void debug_pointer_alloaction(int code_line, char* variable, void* pointer, size
 
 /* 
 ---- debug_pointer_allocation() ----
-Prints the allocation of a pointer with the pointer address and the size of the pointer.
+Prints the allocation of a pointer with the pointer address and the size of the pointer. Requires compiler flags -DDBUG, where 1 < n, is called.
 @param char* code_line: the line in the source vode the memory is allocated.
 @param char* variable: the name of the variable used for the memory.
 @param void* address: the memory address of the pointer
